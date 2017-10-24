@@ -1,0 +1,11 @@
+pip install Django - This installed the Django package 
+pip list - shows the installed packages 
+pip freeze - appears to show the installed version of installed packages 
+pip freeze > requirements.txt - created the file in the current dir which contained the results of the freeze command (installed versions of the current installed packages)
+
+pip uninstall Django - uninstalled the package specified
+pip show Django - provides general information on the specified package 
+pip search Flask - returns any packages with the specified search term in the name or info?
+
+
+
