@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>New</title>
+    <title>Registration Form</title>
 </head>
 <body>
     {% with messages = get_flashed_messages() %}
@@ -14,11 +14,13 @@
             {% endfor %}
         {% endif %}
     {% endwith %} 
-    <form action='/result' method='post'>
-        Your Name: <input type='text' name='name'>
-        Location: <input type='text' name='location'>
-        Comment: <textarea type='text' name='comment'></textarea>
-        <input type='submit' value='Submit'>
+    <form action='/process' method='POST'>
+        First Name:<input type="text" name="first_name">
+        Last Name:<input type="text" name="last_name">
+        Email:<input type="text" name="email">
+        Password:<input type="text" name="password">
+        Confirm Password:<input type="text" name="confirm_pass">
+        <input type="submit" value="Submit">
     </form>
 </body>
 </html>

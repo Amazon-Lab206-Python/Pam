@@ -9,8 +9,8 @@
 </head>
 <body>
     <h3>Your Gold: {{ session['gold'] }}</h3>
-        <div>
-            <div>
+        <div class='wrap'>
+            <div class='box'>
                 <h1>Farm</h1>
                 <p>(earns 10-20g)</p>
                 <form action="/process_money" method="post">
@@ -18,7 +18,7 @@
                     <input type="submit" value="Find Gold!"/>
                   </form>
             </div>
-            <div>
+            <div class='box'>
                 <h1>Cave</h1>
                 <p>(earns 5-10g)</p>
                 <form action="/process_money" method="post">
@@ -26,7 +26,7 @@
                     <input type="submit" value="Find Gold!"/>
                   </form>
             </div>
-            <div>
+            <div class='box'>
                 <h1>House</h1>
                 <p>(earns 2-5g)</p>
                 <form action="/process_money" method="post">
@@ -34,7 +34,7 @@
                     <input type="submit" value="Find Gold!"/>
                   </form>
             </div>
-            <div>
+            <div class='box'>
                 <h1>Casino</h1>
                 <p>(earns/takes 0-50g)</p>
                 <form action="/process_money" method="post">
@@ -43,7 +43,14 @@
                   </form>
             </div>
         </div>
-    <h1>Activities:</h1>
-    <p></p>
+    <h3>Activities:</h3>
+    {% for i in range(session['log']|length, -1, -1) %}
+        <p>{{ session['log'][i] }}</p>
+    {% endfor %}
+    <!-- <p>{{ session['log'] }}</p> -->
+    <form action="/reset" method="post">
+        <input type="submit" value="Reset"/>
+    </form>
+    
 </body>
 </html>
