@@ -12,11 +12,11 @@ def index():
 def process():
     if len(request.form['first_name']) < 1:
         flash("Please provide your first name")
-    elif not str.isalpha(request.form['first_name']):
+    elif not str.isalpha(str(request.form['first_name'])):
         flash("Please provide a valid first name")
     if len(request.form['last_name']) < 1:
         flash("Please provide your last name")
-    elif not str.isalpha(request.form['last_name']):
+    elif not str.isalpha(str(request.form['last_name'])):
         flash("Please provide a valid last name") 
     if len(request.form['email']) < 1:
         flash("Please provide your email address")
