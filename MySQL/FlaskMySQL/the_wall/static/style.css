@@ -1,0 +1,12 @@
+label {
+    display: block;
+    margin: 5px ;
+}
+input {
+    border: 1px solid black;
+    margin-left: 5px;
+}
+
+.comment {
+    margin-left: 30px;
+}
