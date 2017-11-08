@@ -10,6 +10,6 @@ from django.utils.crypto import get_random_string
 def index(request):
     context = {
         "date" : strftime("%m-%d-%Y",gmtime()),
-        "time" : strftime("%H:%M %p", gmtime())
+        "time" : strftime("%H:%M", gmtime())
     }
     return render(request, "timedate/index.html", context)

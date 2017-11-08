@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>Thank you for submitting the form. You have submitted the form {{ request.session.counter }} times now.</p>
+    <h2>Submitted Information:</h2>
+    <p>Name: {{ request.session.name }}</p>
+    <p>Location: {{ request.session.location }}</p>
+    <p>Favorite Language: {{ request.session.language }}</p>
+    <p>Comments: {{ request.session.comment }}</p>
+</body>
+</html>
