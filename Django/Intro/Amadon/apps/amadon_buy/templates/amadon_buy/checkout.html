@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Amadon Checkout</title>
+</head>
+<body>
+    <h1>Thank you for your business!</h1>
+    <p>We charged your card ${{request.session.price}}.</p>
+    <p>You have ordered {{request.session.items}} items so far and spent a total of ${{request.session.total}} at the Amadon Store!</p>
+    <a href="/">Go Back to Store</a>
+    <form action="/logout" method="post">
+        {% csrf_token %}
+        <input type="submit" value="I'm Done Shopping">
+    </form>
+</body>
+</html>

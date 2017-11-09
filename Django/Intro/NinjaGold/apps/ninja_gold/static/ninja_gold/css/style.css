@@ -1,0 +1,27 @@
+.box {
+    border: 2px solid black;
+    width: 300px;
+    display: inline-block;
+    text-align: center;
+}
+
+.wrap {
+    display: inline-block;
+}
+form {
+    margin-bottom: 20px
+}
+input[type=submit] {
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px black;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #BBBB56
+}
+
+.win {
+    color: green
+}
+.lose {
+    color: red
+}

@@ -1,0 +1,19 @@
+table {
+    font-family: arial, sans-serif;
+    width: auto;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+input[type=submit] {
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px black;
+}
