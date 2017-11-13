@@ -1,0 +1,40 @@
+table {
+    font-family: arial, sans-serif;
+    width: auto;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.green {
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px black;
+    background-color: #25A325;
+    color: white;
+    padding: 5px
+}
+
+h4 {
+    margin: 5px;
+}
+
+.red {
+    background-color: #AC3535;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px black;
+    color: white;
+    padding: 5px;
+}
+
+button {
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px black;
+    padding: 5px;
+}
