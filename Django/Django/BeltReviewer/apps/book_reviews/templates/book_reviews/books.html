@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'book_reviews/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    <title>Book Reviews</title>
+</head>
+<body>
+    <div class='header'>
+        <h2 class='inline'>Welcome, {{ user }}!</h2>
+        <a class='inline' href="/books/add">Add Book and Review | </a>
+        <a class='inline' href="/logout">Logout</a>
+    </div>
+    <div class='left'>
+        <h1>Recent Book Reviews:</h1>
+        {% for review in recent %}
+            <a href="/books/{{review.book.id}}">{{review.book.title}}</a>
+            <p>Rating: {{review.rating}} star</p>
+            <p><a href="/user/review.reviewer.id">{{review.reviewer.name}}</a> says: {{review.review }}</p>
+            <p>Posted on: {{review.created_at}}</p>
+            {% if request.session.user_id == review.reviewer.id %}
+                <a href= "/books/{{review.id}}/delete">Delete Review</a><br>
+            {% endif %}
+            <hr>
+        {% endfor %}
+    </div>
+    <div class = 'rightscroll'>
+        <h1>Other Books with Reviews:</h1>
+        {% for review in more %}
+            <h2><a href="/books/{{review.book.id}}">{{ review.book.title }}</a></h2>
+        {% endfor %}
+    </div>
+</body>
+</html>

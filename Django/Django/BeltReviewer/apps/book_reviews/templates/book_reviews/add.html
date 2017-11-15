@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'book_reviews/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    <title>Add a Book and Review</title>
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    <div class='header'>
+        <a href="/books">Home | </a>
+        <a href="/books/add">Add Book and Review</a>
+        <a href="/logout">Logout</a>
+    </div>
+    <h1>Add a New Book Title and a Review:</h1>
+    <form action='/books/create_new' method='POST'>
+        {% csrf_token %}
+        <p><label for="title">Book Title:</label>
+        <input type="text" name="title"></p>
+        <label for="author">Author:</label>
+        <ul>
+            <li><p>Choose from the list:
+            <select name="existing_author">
+                {% for author in authors %}
+                    <option value="{{author.id}}">{{author.name}}</option>
+                {% endfor %}
+            </select></p></li>
+            <li><p>Or add a new author:<input type="text" name="author"></p></li>
+        </ul>
+        Review:<br> <label for="review"><textarea type='text' name='review'></textarea></label><br>
+        <label for="rating">Rating:<br>
+            <select name="rating">
+                <option value='1' selected>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                Stars
+            </select>
+        </label><br>
+        <input type="submit" value="Submit Review">
+    </form>
+</body>
+</html>
