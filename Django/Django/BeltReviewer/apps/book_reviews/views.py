@@ -12,7 +12,6 @@ def register(request):
     result = User.objects.validate_reg(request.POST)
     if result[0] == False:
         for error in result[1]:
-            print error
             messages.error(request, error)
         return redirect("/")
     else:
@@ -23,7 +22,6 @@ def login(request):
     result = User.objects.validate_login(request.POST)
     if result[0] == False:
         for error in result[1]:
-            print error
             messages.error(request, error)
         return redirect('/')
     else:
